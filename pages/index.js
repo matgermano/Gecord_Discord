@@ -1,3 +1,5 @@
+import appConfig from "../config.json";
+
 function GlobalStyle() {
     return (
       <style global jsx>{`
@@ -27,17 +29,26 @@ function GlobalStyle() {
     );
   }
 
+function Titulo(props){
+    const Tag = props.tag;
+    return(
+        <>
+            <Tag>{props.children}</Tag>
+            <style jsx>{`
+                ${Tag}{
+                    color: ${appConfig.theme.colors.neutrals['100']}
+                }
+            `}</style>
+        </>
+    );
+};  
+
 function HomePage() {
     return (
     <div>
         <GlobalStyle/>
-        <h1>Bem vindo ao Gecord!</h1>
+        <Titulo tag='h2' >Bem vindo ao Gecord!</Titulo>
         <h2>Discord - Developer Germano</h2>
-        <style jsx>{`
-        h1 {
-            color:red;
-        }
-        `}</style>
     </div>
     )}
   
