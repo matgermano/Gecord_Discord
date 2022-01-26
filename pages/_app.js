@@ -6,9 +6,11 @@ function GlobalStyle() {
           padding: 0;
           box-sizing: border-box;
           list-style: none;
+          overflow: hidden;
         }
         body {
           font-family: "Open Sans", sans-serif;
+          overflow: hidden;
         }
         /* App fit Height */
         html,
